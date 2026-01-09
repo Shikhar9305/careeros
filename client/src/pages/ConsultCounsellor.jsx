@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState, useEffect } from "react"
@@ -19,7 +20,7 @@ const ConsultCounsellor = () => {
     const fetchCounsellors = async () => {
       try {
         setLoading(true)
-       const response = await fetch("http://localhost:5002/api/users/counsellors/all");
+       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/counsellors/all`);
         
         if (!response.ok) {
           throw new Error("Failed to fetch counsellors")
@@ -48,32 +49,39 @@ const ConsultCounsellor = () => {
     return matchesSearch && matchesSpecialization
   })
 
-  const handleBookAppointment = (counsellorId) => {
-    // Navigate to appointment booking page
-    navigate(`/book-appointment/${counsellorId}`, { state: { user } })
-  }
+ const handleBookAppointment = (counsellorUserId) => {
+  navigate(`/book-appointment/${counsellorUserId}`, { state: { user } })
+}
 
-  const handleFollow = (counsellorId) => {
-    setFollowedCounsellors(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(counsellorId)) {
-        newSet.delete(counsellorId)
-      } else {
-        newSet.add(counsellorId)
+const handleFollow = (counsellorUserId) => {
+  setFollowedCounsellors(prev => {
+    const newSet = new Set(prev)
+    if (newSet.has(counsellorUserId)) {
+      newSet.delete(counsellorUserId)
+    } else {
+      newSet.add(counsellorUserId)
+    }
+    return newSet
+  })
+}
+
+const handleMessage = (counsellorUserId, counsellorName) => {
+  navigate('/messages', {
+    state: {
+      user,
+      preSelectedChat: {
+        userId: counsellorUserId,
+        name: counsellorName,
+        role: 'counselor'
       }
-      return newSet
-    })
-  }
+    }
+  })
+}
 
-  const handleMessage = (counsellorId) => {
-    // Navigate to messaging page
-    navigate(`/message/${counsellorId}`, { state: { user } })
-  }
+const handleViewProfile = (counsellorUserId) => {
+  navigate(`/counsellor-profile/${counsellorUserId}`, { state: { user } })
+}
 
-  const handleViewProfile = (counsellorId) => {
-    // Navigate to counsellor profile page
-    navigate(`/counsellor-profile/${counsellorId}`, { state: { user } })
-  }
 
   if (!user) {
     return (
@@ -261,7 +269,7 @@ const ConsultCounsellor = () => {
                       {/* Action Buttons */}
                       <div className="mt-6 space-y-3">
                         <button
-                          onClick={() => handleBookAppointment(counsellor._id)}
+                       onClick={() => handleBookAppointment(counsellor.userId)}
                           className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 px-4 rounded-xl font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md hover:shadow-lg"
                         >
                           📅 Book Appointment
@@ -280,7 +288,7 @@ const ConsultCounsellor = () => {
                           </button>
                           
                           <button
-                            onClick={() => handleMessage(counsellor._id)}
+                            onClick={() => handleMessage(counsellor.userId, counsellor.fullName)}
                             className="py-2 px-3 rounded-lg text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors"
                           >
                             💬 Message

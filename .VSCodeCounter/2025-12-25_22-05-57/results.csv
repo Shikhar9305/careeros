@@ -1,0 +1,136 @@
+"filename", "language", "JavaScript", "JavaScript JSX", "XML", "JSON", "PostCSS", "Dotenv", "Markdown", "HTML", "comment", "blank", "total"
+"/Users/shikharsingh/Desktop/careercounselling copy/client/.env", "Dotenv", 0, 0, 0, 0, 0, 6, 0, 0, 0, 1, 7
+"/Users/shikharsingh/Desktop/careercounselling copy/client/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 7, 0, 0, 6, 13
+"/Users/shikharsingh/Desktop/careercounselling copy/client/eslint.config.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 0, 2, 30
+"/Users/shikharsingh/Desktop/careercounselling copy/client/index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 13, 0, 1, 14
+"/Users/shikharsingh/Desktop/careercounselling copy/client/package-lock.json", "JSON", 0, 0, 0, 6944, 0, 0, 0, 0, 0, 1, 6945
+"/Users/shikharsingh/Desktop/careercounselling copy/client/package.json", "JSON", 0, 0, 0, 54, 0, 0, 0, 0, 0, 1, 55
+"/Users/shikharsingh/Desktop/careercounselling copy/client/postcss.config.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/shikharsingh/Desktop/careercounselling copy/client/postcss.config.js 18-05-46-290.js", "JavaScript", 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/Users/shikharsingh/Desktop/careercounselling copy/client/public/vite.svg", "XML", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/shikharsingh/Desktop/careercounselling copy/client/scripts/annotate-ui-check.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 0, 1, 1, 14
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/App.css", "PostCSS", 0, 0, 0, 0, 37, 0, 0, 0, 0, 6, 43
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/App.jsx", "JavaScript JSX", 0, 45, 0, 0, 0, 0, 0, 0, 0, 5, 50
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/assets/react.svg", "XML", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/AptitudeSection.jsx", "JavaScript JSX", 0, 46, 0, 0, 0, 0, 0, 0, 0, 8, 54
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/BarChart.jsx", "JavaScript JSX", 0, 43, 0, 0, 0, 0, 0, 0, 0, 7, 50
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/CollegeCard.jsx", "JavaScript JSX", 0, 226, 0, 0, 0, 0, 0, 0, 20, 26, 272
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/PersonalitySection.jsx", "JavaScript JSX", 0, 42, 0, 0, 0, 0, 0, 0, 0, 6, 48
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ProgressBar.jsx", "JavaScript JSX", 0, 28, 0, 0, 0, 0, 0, 0, 2, 4, 34
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/QuestionCard.jsx", "JavaScript JSX", 0, 55, 0, 0, 0, 0, 0, 0, 0, 6, 61
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RIASECSection.jsx", "JavaScript JSX", 0, 43, 0, 0, 0, 0, 0, 0, 0, 7, 50
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RadarChart.jsx", "JavaScript JSX", 0, 67, 0, 0, 0, 0, 0, 0, 0, 11, 78
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RecommendationSkeleton.jsx", "JavaScript JSX", 0, 37, 0, 0, 0, 0, 0, 0, 11, 8, 56
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapFlow.jsx", "JavaScript JSX", 0, 54, 0, 0, 0, 0, 0, 0, 0, 6, 60
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapForm.jsx", "JavaScript JSX", 0, 236, 0, 0, 0, 0, 0, 0, 0, 22, 258
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapNode.jsx", "JavaScript JSX", 0, 120, 0, 0, 0, 0, 0, 0, 0, 16, 136
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/StepLayout.jsx", "JavaScript JSX", 0, 15, 0, 0, 0, 0, 0, 0, 0, 2, 17
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/SubmitModal.jsx", "JavaScript JSX", 0, 29, 0, 0, 0, 0, 0, 0, 0, 3, 32
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ValuesSection.jsx", "JavaScript JSX", 0, 42, 0, 0, 0, 0, 0, 0, 0, 6, 48
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/action-executor.jsx", "JavaScript JSX", 0, 294, 0, 0, 0, 0, 0, 0, 31, 95, 420
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/command-registry.jsx", "JavaScript JSX", 0, 166, 0, 0, 0, 0, 0, 0, 19, 29, 214
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/element-finder.jsx", "JavaScript JSX", 0, 216, 0, 0, 0, 0, 0, 0, 19, 42, 277
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/intent-processor.jsx", "JavaScript JSX", 0, 384, 0, 0, 0, 0, 0, 0, 17, 59, 460
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/workflow-engine.jsx", "JavaScript JSX", 0, 198, 0, 0, 0, 0, 0, 0, 15, 42, 255
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/hooks/use-voice-assistant.jsx", "JavaScript JSX", 0, 346, 0, 0, 0, 0, 0, 0, 20, 73, 439
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/index.jsx", "JavaScript JSX", 0, 15, 0, 0, 0, 0, 0, 0, 5, 5, 25
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/ui/assistant-overlay.jsx", "JavaScript JSX", 0, 445, 0, 0, 0, 0, 0, 0, 241, 46, 732
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/ui/visual-indicator.jsx", "JavaScript JSX", 0, 281, 0, 0, 0, 0, 0, 0, 0, 21, 302
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/student-profile-modal.jsx", "JavaScript JSX", 0, 251, 0, 0, 0, 0, 0, 0, 7, 20, 278
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/alert.jsx", "JavaScript JSX", 0, 26, 0, 0, 0, 0, 0, 0, 0, 5, 31
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/badge.jsx", "JavaScript JSX", 0, 35, 0, 0, 0, 0, 0, 0, 0, 6, 41
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/button.jsx", "JavaScript JSX", 0, 50, 0, 0, 0, 0, 0, 0, 0, 6, 56
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/card.jsx", "JavaScript JSX", 0, 92, 0, 0, 0, 0, 0, 0, 0, 10, 102
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/checkbox.jsx", "JavaScript JSX", 0, 25, 0, 0, 0, 0, 0, 0, 0, 5, 30
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/dialog.jsx", "JavaScript JSX", 0, 120, 0, 0, 0, 0, 0, 0, 0, 14, 134
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/input.jsx", "JavaScript JSX", 0, 21, 0, 0, 0, 0, 0, 0, 0, 4, 25
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/label.jsx", "JavaScript JSX", 0, 18, 0, 0, 0, 0, 0, 0, 0, 4, 22
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/progress.jsx", "JavaScript JSX", 0, 23, 0, 0, 0, 0, 0, 0, 0, 5, 28
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/select.jsx", "JavaScript JSX", 0, 132, 0, 0, 0, 0, 0, 0, 0, 14, 146
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/switch.jsx", "JavaScript JSX", 0, 24, 0, 0, 0, 0, 0, 0, 0, 4, 28
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/tabs.jsx", "JavaScript JSX", 0, 54, 0, 0, 0, 0, 0, 0, 0, 7, 61
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/textarea.jsx", "JavaScript JSX", 0, 17, 0, 0, 0, 0, 0, 0, 0, 4, 21
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/context/SocketContext.jsx", "JavaScript JSX", 0, 70, 0, 0, 0, 0, 0, 0, 1, 19, 90
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/data/psychometricQuestions.json", "JSON", 0, 0, 0, 560, 0, 0, 0, 0, 0, 1, 561
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/index.css", "PostCSS", 0, 0, 0, 0, 64, 0, 0, 0, 0, 9, 73
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/lib/api.js", "JavaScript", 74, 0, 0, 0, 0, 0, 0, 0, 7, 20, 101
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/lib/utils.js", "JavaScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 1, 5
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/main.jsx", "JavaScript JSX", 0, 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/AIOptimizationModal.jsx", "JavaScript JSX", 0, 200, 0, 0, 0, 0, 0, 0, 240, 44, 484
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ARCampusVisualiser.jsx", "JavaScript JSX", 0, 215, 0, 0, 0, 0, 0, 0, 7, 18, 240
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ARScene.jsx", "JavaScript JSX", 0, 70, 0, 0, 0, 0, 0, 0, 5, 9, 84
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/AvatarMenu.jsx", "JavaScript JSX", 0, 113, 0, 0, 0, 0, 0, 0, 8, 10, 131
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/BookApointment.jsx", "JavaScript JSX", 0, 393, 0, 0, 0, 0, 0, 0, 300, 75, 768
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CameraView.jsx", "JavaScript JSX", 0, 124, 0, 0, 0, 0, 0, 0, 5, 10, 139
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CareerRecommendations.jsx", "JavaScript JSX", 0, 177, 0, 0, 0, 0, 0, 0, 4, 11, 192
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CareerRoadmap.jsx", "JavaScript JSX", 0, 186, 0, 0, 0, 0, 0, 0, 0, 17, 203
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ChatInterface.jsx", "JavaScript JSX", 0, 211, 0, 0, 0, 0, 0, 0, 209, 50, 470
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CollegeMap.jsx", "JavaScript JSX", 0, 79, 0, 0, 0, 0, 0, 0, 3, 17, 99
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ConsultCounsellor.jsx", "JavaScript JSX", 0, 278, 0, 0, 0, 0, 0, 0, 281, 67, 626
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CounsellorDashboard.jsx", "JavaScript JSX", 0, 581, 0, 0, 0, 0, 0, 0, 598, 97, 1276
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CounsellorProfilePopup.jsx", "JavaScript JSX", 0, 448, 0, 0, 0, 0, 0, 0, 4, 26, 478
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ExploreColleges.jsx", "JavaScript JSX", 0, 279, 0, 0, 0, 0, 0, 0, 5, 23, 307
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/Landing.jsx", "JavaScript JSX", 0, 424, 0, 0, 0, 0, 0, 0, 530, 76, 1030
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/Layout.jsx", "JavaScript JSX", 0, 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/LoadingSkeleton.jsx", "JavaScript JSX", 0, 29, 0, 0, 0, 0, 0, 0, 0, 2, 31
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/MessageList.jsx", "JavaScript JSX", 0, 202, 0, 0, 0, 0, 0, 0, 209, 36, 447
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/MessagingPage.jsx", "JavaScript JSX", 0, 92, 0, 0, 0, 0, 0, 0, 0, 10, 102
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ModelLoader.jsx", "JavaScript JSX", 0, 31, 0, 0, 0, 0, 0, 0, 2, 5, 38
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfileCompletionPopup.jsx", "JavaScript JSX", 0, 535, 0, 0, 0, 0, 0, 0, 4, 26, 565
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfilePage.jsx", "JavaScript JSX", 0, 162, 0, 0, 0, 0, 0, 0, 6, 12, 180
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfilePictureUpload.jsx", "JavaScript JSX", 0, 123, 0, 0, 0, 0, 0, 0, 8, 12, 143
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/PsychometricReport.jsx", "JavaScript JSX", 0, 193, 0, 0, 0, 0, 0, 0, 5, 19, 217
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/PsychometricTest.jsx", "JavaScript JSX", 0, 115, 0, 0, 0, 0, 0, 0, 0, 25, 140
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ResumeBuilder.jsx", "JavaScript JSX", 0, 259, 0, 0, 0, 0, 0, 0, 7, 14, 280
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/StudentDashboard.jsx", "JavaScript JSX", 0, 501, 0, 0, 0, 0, 0, 0, 523, 90, 1114
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/CertificationsProjectForm.jsx", "JavaScript JSX", 0, 244, 0, 0, 0, 0, 0, 0, 2, 19, 265
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/EducationForm.jsx", "JavaScript JSX", 0, 164, 0, 0, 0, 0, 0, 0, 0, 12, 176
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/ExportUtils.js", "JavaScript", 226, 0, 0, 0, 0, 0, 0, 0, 12, 20, 258
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/PersonalInfoForm.jsx", "JavaScript JSX", 0, 59, 0, 0, 0, 0, 0, 0, 0, 6, 65
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/ResumePreview.jsx", "JavaScript JSX", 0, 290, 0, 0, 0, 0, 0, 0, 14, 18, 322
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/SkillsForm.jsx", "JavaScript JSX", 0, 124, 0, 0, 0, 0, 0, 0, 3, 13, 140
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/TemplateSelector.jsx", "JavaScript JSX", 0, 130, 0, 0, 0, 0, 0, 0, 0, 11, 141
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/WorkExperienceForm.jsx", "JavaScript JSX", 0, 203, 0, 0, 0, 0, 0, 0, 1, 16, 220
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/services/collegeApi.js", "JavaScript", 100, 0, 0, 0, 0, 0, 0, 0, 2, 11, 113
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/services/geminiService.js", "JavaScript", 37, 0, 0, 0, 0, 0, 0, 0, 0, 10, 47
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/services/generateRoadmap.js", "JavaScript", 84, 0, 0, 0, 0, 0, 0, 0, 94, 31, 209
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/styles/globals.css", "PostCSS", 0, 0, 0, 0, 120, 0, 0, 0, 1, 6, 127
+"/Users/shikharsingh/Desktop/careercounselling copy/client/src/styles/roadmap.css", "PostCSS", 0, 0, 0, 0, 25, 0, 0, 0, 0, 7, 32
+"/Users/shikharsingh/Desktop/careercounselling copy/client/tailwind.config.js", "JavaScript", 10, 0, 0, 0, 0, 0, 0, 0, 1, 1, 12
+"/Users/shikharsingh/Desktop/careercounselling copy/client/vite.config.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 1, 2, 14
+"/Users/shikharsingh/Desktop/careercounselling copy/server/.env", "Dotenv", 0, 0, 0, 0, 0, 10, 0, 0, 0, 2, 12
+"/Users/shikharsingh/Desktop/careercounselling copy/server/config/domainOntology.js", "JavaScript", 32, 0, 0, 0, 0, 0, 0, 0, 1, 3, 36
+"/Users/shikharsingh/Desktop/careercounselling copy/server/config/mlWeights.json", "JSON", 0, 0, 0, 9, 0, 0, 0, 0, 0, 1, 10
+"/Users/shikharsingh/Desktop/careercounselling copy/server/controllers/resume.controller.js", "JavaScript", 41, 0, 0, 0, 0, 0, 0, 0, 0, 11, 52
+"/Users/shikharsingh/Desktop/careercounselling copy/server/data/psychometricQuestions.json", "JSON", 0, 0, 0, 560, 0, 0, 0, 0, 0, 1, 561
+"/Users/shikharsingh/Desktop/careercounselling copy/server/generateCollegeEmbeddings.js", "JavaScript", 67, 0, 0, 0, 0, 0, 0, 0, 2, 13, 82
+"/Users/shikharsingh/Desktop/careercounselling copy/server/index.js", "JavaScript", 53, 0, 0, 0, 0, 0, 0, 0, 84, 35, 172
+"/Users/shikharsingh/Desktop/careercounselling copy/server/lib/mongodb.js", "JavaScript", 10, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/Appointment.js", "JavaScript", 41, 0, 0, 0, 0, 0, 0, 0, 0, 3, 44
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/Message.js", "JavaScript", 13, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/PsychometricTest.js", "JavaScript", 91, 0, 0, 0, 0, 0, 0, 0, 3, 7, 101
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/RecommendationEvent.js", "JavaScript", 33, 0, 0, 0, 0, 0, 0, 0, 8, 5, 46
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/StudentProfile.js", "JavaScript", 27, 0, 0, 0, 0, 0, 0, 0, 0, 3, 30
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/college.js", "JavaScript", 75, 0, 0, 0, 0, 0, 0, 0, 1, 6, 82
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/counsellor-profile.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 0, 3, 31
+"/Users/shikharsingh/Desktop/careercounselling copy/server/models/user.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 5, 16
+"/Users/shikharsingh/Desktop/careercounselling copy/server/package-lock.json", "JSON", 0, 0, 0, 3650, 0, 0, 0, 0, 0, 1, 3651
+"/Users/shikharsingh/Desktop/careercounselling copy/server/package.json", "JSON", 0, 0, 0, 38, 0, 0, 0, 0, 0, 1, 39
+"/Users/shikharsingh/Desktop/careercounselling copy/server/prompts/resume.prompts.js", "JavaScript", 52, 0, 0, 0, 0, 0, 0, 0, 0, 3, 55
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/appointments.js", "JavaScript", 121, 0, 0, 0, 0, 0, 0, 0, 5, 18, 144
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/assistant-intent-smart.js", "JavaScript", 164, 0, 0, 0, 0, 0, 0, 0, 5, 20, 189
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/generateRoadmap.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 2, 11, 41
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/messages.js", "JavaScript", 56, 0, 0, 0, 0, 0, 0, 0, 15, 12, 83
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/payments.js", "JavaScript", 63, 0, 0, 0, 0, 0, 0, 0, 3, 11, 77
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/psychometric.js", "JavaScript", 355, 0, 0, 0, 0, 0, 0, 0, 45, 81, 481
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/recommendationRoutes.js", "JavaScript", 165, 0, 0, 0, 0, 0, 0, 0, 50, 33, 248
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/resume.routes.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 4, 15
+"/Users/shikharsingh/Desktop/careercounselling copy/server/routes/users.js", "JavaScript", 206, 0, 0, 0, 0, 0, 0, 0, 18, 55, 279
+"/Users/shikharsingh/Desktop/careercounselling copy/server/services/gemini.service.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 0, 5, 20
+"/Users/shikharsingh/Desktop/careercounselling copy/server/services/message.service.js", "JavaScript", 72, 0, 0, 0, 0, 0, 0, 0, 15, 8, 95
+"/Users/shikharsingh/Desktop/careercounselling copy/server/socket/socket.js", "JavaScript", 64, 0, 0, 0, 0, 0, 0, 0, 8, 12, 84
+"/Users/shikharsingh/Desktop/careercounselling copy/server/utils/academicResolver.js", "JavaScript", 7, 0, 0, 0, 0, 0, 0, 0, 1, 3, 11
+"/Users/shikharsingh/Desktop/careercounselling copy/server/utils/domainResolver.js", "JavaScript", 21, 0, 0, 0, 0, 0, 0, 0, 0, 7, 28
+"/Users/shikharsingh/Desktop/careercounselling copy/server/utils/eligibilityGate.js", "JavaScript", 25, 0, 0, 0, 0, 0, 0, 0, 3, 9, 37
+"/Users/shikharsingh/Desktop/careercounselling copy/server/utils/recommendationHelpers.js", "JavaScript", 142, 0, 0, 0, 0, 0, 0, 0, 62, 43, 247
+"Total", "-", 2685, 11695, 2, 11815, 246, 16, 7, 13, 3842, 2164, 32485

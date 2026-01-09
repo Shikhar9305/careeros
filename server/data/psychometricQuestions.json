@@ -1,0 +1,560 @@
+{
+  "aptitude": [
+    {
+      "id": 1,
+      "question": "What is 18 + 27?",
+      "category": "numerical",
+      "options": ["35", "42", "45", "48"],
+      "correctAnswer": "45"
+    },
+    {
+      "id": 2,
+      "question": "If a book costs ₹240 after a 20% discount, what was the original price?",
+      "category": "numerical",
+      "options": ["₹260", "₹280", "₹300", "₹320"],
+      "correctAnswer": "₹300"
+    },
+    {
+      "id": 3,
+      "question": "What is 3/5 of 250?",
+      "category": "numerical",
+      "options": ["100", "125", "150", "175"],
+      "correctAnswer": "150"
+    },
+    {
+      "id": 4,
+      "question": "A car travels 180 km in 3 hours. What is its average speed?",
+      "category": "numerical",
+      "options": ["40 km/h", "50 km/h", "60 km/h", "70 km/h"],
+      "correctAnswer": "60 km/h"
+    },
+    {
+      "id": 5,
+      "question": "Solve: 12² − 8²",
+      "category": "numerical",
+      "options": ["48", "64", "80", "96"],
+      "correctAnswer": "80"
+    },
+    {
+      "id": 6,
+      "question": "Which number should come next in the series: 4, 7, 11, 16, ?",
+      "category": "pattern",
+      "options": ["20", "21", "22", "23"],
+      "correctAnswer": "22"
+    },
+    {
+      "id": 7,
+      "question": "Which number should come next in the series: 3, 6, 12, 24, ?",
+      "category": "pattern",
+      "options": ["30", "36", "40", "48"],
+      "correctAnswer": "48"
+    },
+    {
+      "id": 8,
+      "question": "Find the next term: 2, 5, 9, 14, 20, ?",
+      "category": "pattern",
+      "options": ["25", "26", "27", "28"],
+      "correctAnswer": "27"
+    },
+    {
+      "id": 9,
+      "question": "Which of the following is the odd one out: 16, 25, 36, 40",
+      "category": "logical",
+      "options": ["16", "25", "36", "40"],
+      "correctAnswer": "40"
+    },
+    {
+      "id": 10,
+      "question": "If ALL BLOSSOMS are FLOWERS and SOME FLOWERS are RED, which is definitely true?",
+      "category": "logical",
+      "options": [
+        "All blossoms are red",
+        "Some blossoms may be red",
+        "No blossoms are red",
+        "All flowers are blossoms"
+      ],
+      "correctAnswer": "Some blossoms may be red"
+    },
+    {
+      "id": 11,
+      "question": "Choose the word that is most similar in meaning to 'precise'.",
+      "category": "verbal",
+      "options": ["vague", "exact", "rough", "random"],
+      "correctAnswer": "exact"
+    },
+    {
+      "id": 12,
+      "question": "Choose the word that is opposite in meaning to 'scarce'.",
+      "category": "verbal",
+      "options": ["rare", "plentiful", "limited", "few"],
+      "correctAnswer": "plentiful"
+    },
+    {
+      "id": 13,
+      "question": "Which pair has the same relationship as: 'Doctor : Hospital'?",
+      "category": "verbal",
+      "options": [
+        "Pilot : Train",
+        "Teacher : Classroom",
+        "Driver : Garage",
+        "Author : Library"
+      ],
+      "correctAnswer": "Teacher : Classroom"
+    },
+    {
+      "id": 14,
+      "question": "If MONDAY is coded as NLP EBZ, how is SUNDAY coded with the same logic?",
+      "category": "logical",
+      "options": ["TVOEBZ", "TVMEAZ", "TVMEZB", "TVOEAZ"],
+      "correctAnswer": "TVOEBZ"
+    },
+    {
+      "id": 15,
+      "question": "A train leaves at 09:15 and reaches at 13:45. How long is the journey?",
+      "category": "logical",
+      "options": ["4 hours 15 minutes", "4 hours 30 minutes", "4 hours 45 minutes", "5 hours"],
+      "correctAnswer": "4 hours 30 minutes"
+    },
+    {
+      "id": 16,
+      "question": "Ratio of boys to girls in a class is 3:2. If there are 30 students, how many are girls?",
+      "category": "numerical",
+      "options": ["10", "12", "15", "18"],
+      "correctAnswer": "12"
+    },
+    {
+      "id": 17,
+      "question": "Which number completes the analogy: 9 : 81 :: 7 : ?",
+      "category": "logical",
+      "options": ["35", "42", "49", "63"],
+      "correctAnswer": "49"
+    },
+    {
+      "id": 18,
+      "question": "What is the average of 18, 22, 26, and 34?",
+      "category": "numerical",
+      "options": ["23", "24", "25", "26"],
+      "correctAnswer": "25"
+    },
+    {
+      "id": 19,
+      "question": "Find the next term: A1, C3, E5, G7, ?",
+      "category": "pattern",
+      "options": ["I8", "I9", "H8", "J9"],
+      "correctAnswer": "I9"
+    },
+    {
+      "id": 20,
+      "question": "Rearrange the letters 'RAEPN' to form a meaningful English word.",
+      "category": "verbal",
+      "options": ["REAPN", "PAREN", "PANE R", "PAREN (PARENT without T)"],
+      "correctAnswer": "PAREN"
+    }
+  ],
+  "personality": [
+    {
+      "id": 1,
+      "question": "I feel energized when I am around many people.",
+      "category": "extraversion"
+    },
+    {
+      "id": 2,
+      "question": "I am considerate of how my decisions affect others.",
+      "category": "agreeableness"
+    },
+    {
+      "id": 3,
+      "question": "I like to plan tasks and complete them on time.",
+      "category": "conscientiousness"
+    },
+    {
+      "id": 4,
+      "question": "I often feel worried about future events.",
+      "category": "neuroticism"
+    },
+    {
+      "id": 5,
+      "question": "I enjoy exploring new ideas and concepts.",
+      "category": "openness"
+    },
+    {
+      "id": 6,
+      "question": "I prefer being the one who starts conversations.",
+      "category": "extraversion"
+    },
+    {
+      "id": 7,
+      "question": "I am patient and understanding with others’ mistakes.",
+      "category": "agreeableness"
+    },
+    {
+      "id": 8,
+      "question": "I keep my study or work space neat and organized.",
+      "category": "conscientiousness"
+    },
+    {
+      "id": 9,
+      "question": "I find it hard to relax when I have many things on my mind.",
+      "category": "neuroticism"
+    },
+    {
+      "id": 10,
+      "question": "I am curious about different cultures and ways of living.",
+      "category": "openness"
+    },
+    {
+      "id": 11,
+      "question": "I enjoy being in the spotlight during group activities.",
+      "category": "extraversion"
+    },
+    {
+      "id": 12,
+      "question": "I try to see situations from other people’s perspectives.",
+      "category": "agreeableness"
+    },
+    {
+      "id": 13,
+      "question": "I set clear goals and work systematically to achieve them.",
+      "category": "conscientiousness"
+    },
+    {
+      "id": 14,
+      "question": "My mood changes quickly when things go wrong.",
+      "category": "neuroticism"
+    },
+    {
+      "id": 15,
+      "question": "I enjoy subjects or activities that make me think deeply.",
+      "category": "openness"
+    },
+    {
+      "id": 16,
+      "question": "I am usually talkative in social situations.",
+      "category": "extraversion"
+    },
+    {
+      "id": 17,
+      "question": "I am sensitive to the feelings of the people around me.",
+      "category": "agreeableness"
+    },
+    {
+      "id": 18,
+      "question": "I stick to routines and schedules to stay on track.",
+      "category": "conscientiousness"
+    },
+    {
+      "id": 19,
+      "question": "I tend to overthink past events and conversations.",
+      "category": "neuroticism"
+    },
+    {
+      "id": 20,
+      "question": "I enjoy trying creative approaches instead of following only standard methods.",
+      "category": "openness"
+    },
+    {
+      "id": 21,
+      "question": "I feel comfortable introducing myself to new people.",
+      "category": "extraversion"
+    },
+    {
+      "id": 22,
+      "question": "I value cooperation more than competition.",
+      "category": "agreeableness"
+    },
+    {
+      "id": 23,
+      "question": "I double-check my work for mistakes.",
+      "category": "conscientiousness"
+    },
+    {
+      "id": 24,
+      "question": "I often feel tense or on edge without a clear reason.",
+      "category": "neuroticism"
+    },
+    {
+      "id": 25,
+      "question": "I like learning about topics that are unusual or abstract.",
+      "category": "openness"
+    }
+  ],
+  "riasec": [
+    {
+      "id": 1,
+      "question": "I enjoy repairing or assembling physical objects.",
+      "category": "Realistic"
+    },
+    {
+      "id": 2,
+      "question": "I like investigating why things happen and searching for logical explanations.",
+      "category": "Investigative"
+    },
+    {
+      "id": 3,
+      "question": "I enjoy expressing myself through art, music, design, or writing.",
+      "category": "Artistic"
+    },
+    {
+      "id": 4,
+      "question": "I feel satisfied when I help people solve their problems.",
+      "category": "Social"
+    },
+    {
+      "id": 5,
+      "question": "I like taking charge of projects and influencing decisions.",
+      "category": "Enterprising"
+    },
+    {
+      "id": 6,
+      "question": "I prefer tasks that involve organizing data, files, or systems.",
+      "category": "Conventional"
+    },
+    {
+      "id": 7,
+      "question": "I would enjoy working with tools, machines, or technical equipment.",
+      "category": "Realistic"
+    },
+    {
+      "id": 8,
+      "question": "I am drawn to careers that involve research or analysis.",
+      "category": "Investigative"
+    },
+    {
+      "id": 9,
+      "question": "I enjoy brainstorming new concepts or imaginative ideas.",
+      "category": "Artistic"
+    },
+    {
+      "id": 10,
+      "question": "I like participating in mentoring, tutoring, or guidance activities.",
+      "category": "Social"
+    },
+    {
+      "id": 11,
+      "question": "I feel motivated by opportunities to lead teams or start initiatives.",
+      "category": "Enterprising"
+    },
+    {
+      "id": 12,
+      "question": "I appreciate clarity, rules, and structured work processes.",
+      "category": "Conventional"
+    },
+    {
+      "id": 13,
+      "question": "I would rather do practical, hands-on work than sit at a desk all day.",
+      "category": "Realistic"
+    },
+    {
+      "id": 14,
+      "question": "I enjoy solving puzzles, case studies, or scientific problems.",
+      "category": "Investigative"
+    },
+    {
+      "id": 15,
+      "question": "I am attracted to careers where originality and creativity are valued.",
+      "category": "Artistic"
+    },
+    {
+      "id": 16,
+      "question": "I feel fulfilled when I support the emotional or social needs of others.",
+      "category": "Social"
+    },
+    {
+      "id": 17,
+      "question": "I like the idea of persuading others about a product, idea, or strategy.",
+      "category": "Enterprising"
+    },
+    {
+      "id": 18,
+      "question": "I prefer roles where I can maintain records and ensure accuracy.",
+      "category": "Conventional"
+    },
+    {
+      "id": 19,
+      "question": "I would enjoy working outdoors or in physical environments rather than digital-only.",
+      "category": "Realistic"
+    },
+    {
+      "id": 20,
+      "question": "I like exploring theories or complex technical subjects in depth.",
+      "category": "Investigative"
+    },
+    {
+      "id": 21,
+      "question": "I feel drawn towards fields like design, media, performing arts, or content creation.",
+      "category": "Artistic"
+    },
+    {
+      "id": 22,
+      "question": "I actively look for opportunities to volunteer, teach, or counsel others.",
+      "category": "Social"
+    },
+    {
+      "id": 23,
+      "question": "I am comfortable taking calculated risks to grow a project or business.",
+      "category": "Enterprising"
+    },
+    {
+      "id": 24,
+      "question": "I like following step-by-step procedures with minimal ambiguity.",
+      "category": "Conventional"
+    },
+    {
+      "id": 25,
+      "question": "I would enjoy operating technical devices, lab instruments, or mechanical systems.",
+      "category": "Realistic"
+    },
+    {
+      "id": 26,
+      "question": "I enjoy interpreting data, charts, or research findings.",
+      "category": "Investigative"
+    },
+    {
+      "id": 27,
+      "question": "I feel most engaged when I can create something visually or conceptually unique.",
+      "category": "Artistic"
+    },
+    {
+      "id": 28,
+      "question": "I am drawn to roles like counsellor, trainer, coach, or social worker.",
+      "category": "Social"
+    },
+    {
+      "id": 29,
+      "question": "I like imagining myself in roles like entrepreneur, manager, or public speaker.",
+      "category": "Enterprising"
+    },
+    {
+      "id": 30,
+      "question": "I enjoy maintaining order in systems such as finances, documentation, or schedules.",
+      "category": "Conventional"
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "question": "How important is creative expression in your ideal career?",
+      "value": "creativity"
+    },
+    {
+      "id": 2,
+      "question": "How important is long-term job security and stability for you?",
+      "value": "security"
+    },
+    {
+      "id": 3,
+      "question": "How important is having freedom to decide how you work?",
+      "value": "autonomy"
+    },
+    {
+      "id": 4,
+      "question": "How important is it that your work directly helps or supports other people?",
+      "value": "helping"
+    },
+    {
+      "id": 5,
+      "question": "How important is the opportunity to lead teams or take charge of projects?",
+      "value": "leadership"
+    },
+    {
+      "id": 6,
+      "question": "How important is continuous learning and skill development in your career?",
+      "value": "growth"
+    },
+    {
+      "id": 7,
+      "question": "How important is maintaining a healthy balance between work and personal life?",
+      "value": "balance"
+    },
+    {
+      "id": 8,
+      "question": "How important is high earning potential or strong financial rewards?",
+      "value": "finances"
+    },
+    {
+      "id": 9,
+      "question": "How important is making a positive impact on society or your community?",
+      "value": "impact"
+    },
+    {
+      "id": 10,
+      "question": "How important is recognition, status, or prestige in your field?",
+      "value": "prestige"
+    },
+    {
+      "id": 11,
+      "question": "How important is working in a collaborative and friendly environment?",
+      "value": "social_atmosphere"
+    },
+    {
+      "id": 12,
+      "question": "How important is having clear rules, structure, and predictable routines at work?",
+      "value": "structure"
+    },
+    {
+      "id": 13,
+      "question": "How important is working on challenging tasks that push you out of your comfort zone?",
+      "value": "challenge"
+    },
+    {
+      "id": 14,
+      "question": "How important is having ethical alignment between your values and your organization’s values?",
+      "value": "ethics"
+    },
+    {
+      "id": 15,
+      "question": "How important is the chance to work with cutting-edge technology or innovation?",
+      "value": "innovation"
+    },
+    {
+      "id": 16,
+      "question": "How important is having the flexibility to choose your location or work remotely?",
+      "value": "flexibility"
+    },
+    {
+      "id": 17,
+      "question": "How important is stability in income over rapid but uncertain growth?",
+      "value": "stability"
+    },
+    {
+      "id": 18,
+      "question": "How important is mentorship—either receiving it or providing it to others?",
+      "value": "mentorship"
+    },
+    {
+      "id": 19,
+      "question": "How important is working in a competitive, performance-driven culture?",
+      "value": "competition"
+    },
+    {
+      "id": 20,
+      "question": "How important is having opportunities to travel or work in different locations?",
+      "value": "travel"
+    },
+    {
+      "id": 21,
+      "question": "How important is working in a role where your decisions directly shape outcomes?",
+      "value": "influence"
+    },
+    {
+      "id": 22,
+      "question": "How important is having variety in your daily tasks instead of routine work?",
+      "value": "variety"
+    },
+    {
+      "id": 23,
+      "question": "How important is contributing to environmental or sustainability goals through your work?",
+      "value": "sustainability"
+    },
+    {
+      "id": 24,
+      "question": "How important is being part of a respected brand, institution, or organization?",
+      "value": "reputation"
+    },
+    {
+      "id": 25,
+      "question": "How important is having clear opportunities for promotion and career advancement?",
+      "value": "advancement"
+    }
+  ]
+}

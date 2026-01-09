@@ -1,14 +1,19 @@
+
+
+
 "use client"
 
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import CounsellorProfilePopup from "./CounsellorProfilePopup"
+import { useSocket } from "../context/SocketContext"
+import { MessageCircle } from "react-feather"
 
 const CounsellorDashboard = ({ onLogout }) => {
   const location = useLocation()
   const navigate = useNavigate()
+  const { socket, registerUser } = useSocket()
 
-  // Load user from location.state or localStorage
   const [user, setUser] = useState(() => {
     return location.state?.user || JSON.parse(localStorage.getItem("user")) || null
   })
@@ -17,80 +22,68 @@ const CounsellorDashboard = ({ onLogout }) => {
   const [profileCompleted, setProfileCompleted] = useState(false)
   const [userProfile, setUserProfile] = useState(null)
   const [activeTab, setActiveTab] = useState("overview")
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      from: "student",
-      senderName: "Rahul Sharma",
-      subject: "Career guidance needed",
-      message: "Hi, I am confused about choosing between engineering and medicine. Can you help me?",
-      timestamp: "2 hours ago",
-      unread: true,
-    },
-    {
-      id: 2,
-      from: "parent",
-      senderName: "Mrs. Priya Patel",
-      subject: "My daughter's career path",
-      message: "My daughter is interested in arts but I want her to pursue science. Need your advice.",
-      timestamp: "5 hours ago",
-      unread: true,
-    },
-    {
-      id: 3,
-      from: "counsellor",
-      senderName: "Dr. Amit Kumar",
-      subject: "Collaboration opportunity",
-      message: "Would you be interested in collaborating on a career guidance workshop?",
-      timestamp: "1 day ago",
-      unread: false,
-    },
-  ])
 
-  console.log("CounsellorDashboard rendered. User state:", user)
+  const [appointments, setAppointments] = useState([])
+  const [loadingAppointments, setLoadingAppointments] = useState(false)
+  const [earnings, setEarnings] = useState({ total: 0, thisMonth: 0, pending: 0 })
 
+  // ✅ REAL messages state (no mock data)
+  const [messages, setMessages] = useState([])
+
+  /* ---------------- SOCKET REGISTRATION ---------------- */
   useEffect(() => {
-    console.log("useEffect triggered. Current user:", user)
+    if (user?._id && socket) {
+      registerUser(user._id, "counselor")
+    }
+  }, [user, socket, registerUser])
 
-    if (!user) {
-      console.log("No user found. Skipping profile fetch.")
-      return
+  /* ---------------- RECEIVE MESSAGES ---------------- */
+  useEffect(() => {
+    if (!socket) return
+
+    socket.on("receive_message", (msg) => {
+      // Map backend message → existing UI structure
+      setMessages((prev) => [
+        {
+          id: msg._id,
+          studentId: msg.senderId,
+          from: msg.senderRole,
+          senderName: "Student",
+          subject: "New Message",
+          message: msg.content,
+          timestamp: new Date(msg.createdAt).toLocaleTimeString(),
+          unread: true,
+        },
+        ...prev,
+      ])
+    })
+
+    return () => {
+      socket.off("receive_message")
     }
-    if (!user._id) {
-      console.log("User object has no _id:", user)
-      return
-    }
-    if (user.role !== "counselor") {
-      console.log("User role is not counselor. Role:", user.role)
-      return
-    }
+  }, [socket])
+
+  /* ---------------- PROFILE CHECK ---------------- */
+  useEffect(() => {
+    if (!user || !user._id || user.role !== "counselor") return
 
     const checkProfileCompletion = async () => {
       try {
-        console.log("Fetching counsellor profile for userId:", user._id)
-
-        const response = await fetch(`http://localhost:5002/api/users/counsellor-profile/${user._id}`)
-        console.log("Fetch response status:", response.status)
-
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/counsellor-profile/${user._id}`)
         if (!response.ok) {
-          console.warn("No profile found, showing popup.")
           setShowProfilePopup(true)
           return
         }
 
         const profile = await response.json()
-        console.log("Fetched counsellor profile data from backend:", profile)
-
-        if (profile && profile.profileCompleted) {
-          console.log("Profile marked completed in DB.")
+        if (profile?.profileCompleted) {
           setUserProfile(profile)
           setProfileCompleted(true)
         } else {
-          console.warn("Profile exists but profileCompleted=false.")
           setShowProfilePopup(true)
         }
-      } catch (error) {
-        console.error("Error checking counsellor profile:", error)
+      } catch (err) {
+        console.error(err)
         setShowProfilePopup(true)
       }
     }
@@ -98,16 +91,84 @@ const CounsellorDashboard = ({ onLogout }) => {
     checkProfileCompletion()
   }, [user])
 
+  /* ---------------- APPOINTMENTS ---------------- */
+  useEffect(() => {
+    if (user?._id && profileCompleted) {
+      fetchAppointments()
+    }
+  }, [user?._id, profileCompleted])
+
+  const fetchAppointments = async () => {
+    setLoadingAppointments(true)
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/counsellor/${user._id}`)
+      if (res.ok) {
+        const data = await res.json()
+        setAppointments(data)
+
+        const total = data.filter((a) => a.paymentStatus === "paid").reduce((s, a) => s + (a.amount || 0), 0)
+        const pending = data.filter((a) => a.status === "confirmed").length
+
+        setEarnings({
+          total,
+          thisMonth: total,
+          pending,
+        })
+      }
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoadingAppointments(false)
+    }
+  }
+
   const handleProfileComplete = (profileData) => {
-    console.log("Profile completed in popup. Saving to state:", profileData)
     setUserProfile(profileData)
     setProfileCompleted(true)
     setShowProfilePopup(false)
-
-    // Update localStorage so state persists after refresh
     const updatedUser = { ...user, profileCompleted: true }
     localStorage.setItem("user", JSON.stringify(updatedUser))
     setUser(updatedUser)
+  }
+
+  const updateAppointmentStatus = async (appointmentId, newStatus) => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/${appointmentId}/status`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: newStatus }),
+      })
+      if (res.ok) {
+        fetchAppointments()
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  /* ---------------- UNREAD COUNT ---------------- */
+  const unreadCount = messages.filter((m) => m.unread).length
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  }
+
+  const getStatusBadge = (status) => {
+    const badges = {
+      confirmed: "bg-green-100 text-green-800",
+      pending: "bg-yellow-100 text-yellow-800",
+      completed: "bg-blue-100 text-blue-800",
+      cancelled: "bg-red-100 text-red-800",
+    }
+    return badges[status] || badges.pending
   }
 
   const dashboardFeatures = [
@@ -115,9 +176,8 @@ const CounsellorDashboard = ({ onLogout }) => {
       title: "Student Consultations",
       description: "Manage your upcoming and past consultation sessions",
       icon: "👥",
-      count: "12 Active",
+      count: `${appointments.filter((a) => a.status === "confirmed").length} Active`,
       gradient: "from-blue-500 to-blue-600",
-      hoverGradient: "from-blue-600 to-blue-700",
     },
     {
       title: "Career Assessments",
@@ -125,7 +185,6 @@ const CounsellorDashboard = ({ onLogout }) => {
       icon: "📊",
       count: "8 Pending",
       gradient: "from-green-500 to-green-600",
-      hoverGradient: "from-green-600 to-green-700",
     },
     {
       title: "Resource Library",
@@ -133,7 +192,6 @@ const CounsellorDashboard = ({ onLogout }) => {
       icon: "📚",
       count: "45 Resources",
       gradient: "from-purple-500 to-purple-600",
-      hoverGradient: "from-purple-600 to-purple-700",
     },
     {
       title: "Analytics & Reports",
@@ -141,24 +199,69 @@ const CounsellorDashboard = ({ onLogout }) => {
       icon: "📈",
       count: "View Reports",
       gradient: "from-orange-500 to-orange-600",
-      hoverGradient: "from-orange-600 to-orange-700",
     },
   ]
 
-  const unreadCount = messages.filter((msg) => msg.unread).length
+  const MessagingTab = ({ messages, navigate }) => (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900">Recent Messages</h2>
+        <button
+          onClick={() => navigate("/messages")}
+          className="text-xs font-bold text-blue-600 uppercase tracking-widest hover:text-blue-700 transition-colors"
+        >
+          View All Inbox
+        </button>
+      </div>
+
+      {messages.length === 0 ? (
+        <div className="bg-gray-50 rounded-3xl p-12 text-center space-y-4">
+          <div className="w-16 h-16 bg-white rounded-2xl shadow-sm mx-auto flex items-center justify-center">
+            <MessageCircle className="text-gray-300 w-8 h-8" />
+          </div>
+          <p className="text-sm text-gray-500 font-medium">
+            No messages yet. They'll appear here when students reach out.
+          </p>
+        </div>
+      ) : (
+        <div className="grid gap-3">
+          {messages.slice(0, 5).map((msg) => (
+            <div
+              key={msg.id}
+              onClick={() =>
+                navigate("/messages", {
+                  state: { preSelectedChat: { userId: msg.studentId, name: "Student", role: "student" } },
+                })
+              }
+              className="group bg-white p-4 rounded-2xl border border-gray-100 hover:border-blue-100 hover:shadow-sm transition-all cursor-pointer flex items-center gap-4"
+            >
+              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg">👨‍🎓</div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-0.5">
+                  <span className="text-sm font-bold text-gray-900">New Message Request</span>
+                  <span className="text-[10px] font-medium text-gray-400">{msg.timestamp}</span>
+                </div>
+                <p className="text-xs text-gray-500 truncate">{msg.message}</p>
+              </div>
+              {msg.unread && <div className="w-2 h-2 bg-blue-600 rounded-full" />}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 
   const renderTabContent = () => {
     switch (activeTab) {
       case "overview":
         return (
           <div className="space-y-8">
-            {/* Quick Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Total Students</p>
-                    <p className="text-2xl font-bold text-gray-900">127</p>
+                    <p className="text-sm text-gray-600">Total Bookings</p>
+                    <p className="text-2xl font-bold text-gray-900">{appointments.length}</p>
                   </div>
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">👨‍🎓</span>
@@ -169,32 +272,32 @@ const CounsellorDashboard = ({ onLogout }) => {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-600">This Month</p>
-                    <p className="text-2xl font-bold text-gray-900">24</p>
+                    <p className="text-2xl font-bold text-gray-900">₹{earnings.thisMonth}</p>
                   </div>
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl">📅</span>
+                    <span className="text-2xl">💰</span>
                   </div>
                 </div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Success Rate</p>
-                    <p className="text-2xl font-bold text-gray-900">94%</p>
+                    <p className="text-sm text-gray-600">Total Earnings</p>
+                    <p className="text-2xl font-bold text-gray-900">₹{earnings.total}</p>
                   </div>
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl">⭐</span>
+                    <span className="text-2xl">💵</span>
                   </div>
                 </div>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-600">Rating</p>
-                    <p className="text-2xl font-bold text-gray-900">4.8</p>
+                    <p className="text-sm text-gray-600">Upcoming</p>
+                    <p className="text-2xl font-bold text-gray-900">{earnings.pending}</p>
                   </div>
                   <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                    <span className="text-2xl">🏆</span>
+                    <span className="text-2xl">📅</span>
                   </div>
                 </div>
               </div>
@@ -210,16 +313,18 @@ const CounsellorDashboard = ({ onLogout }) => {
                   }`}
                   onClick={() => {
                     if (!profileCompleted) {
-                      alert("Please complete your profile first to access this feature!")
+                      alert("Please complete your profile first!")
                       setShowProfilePopup(true)
                       return
                     }
-                    console.log(`Clicked ${feature.title}`)
+                    if (feature.title === "Student Consultations") {
+                      setActiveTab("appointments")
+                    }
                   }}
                 >
                   <div className="p-6">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 mx-auto transform transition-transform duration-200 hover:scale-110`}
+                      className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 mx-auto`}
                     >
                       <span className="text-3xl">{feature.icon}</span>
                     </div>
@@ -237,56 +342,124 @@ const CounsellorDashboard = ({ onLogout }) => {
           </div>
         )
 
-      case "messages":
+      case "appointments":
         return (
-          <div className="bg-white rounded-2xl shadow-lg">
-            <div className="p-6 border-b border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900">Messages</h3>
-              <p className="text-gray-600">Communicate with students, parents, and other counsellors</p>
-            </div>
-            <div className="divide-y divide-gray-200">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={`p-6 hover:bg-gray-50 cursor-pointer transition-colors ${
-                    message.unread ? "bg-blue-50 border-l-4 border-blue-500" : ""
-                  }`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div
-                          className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold ${
-                            message.from === "student"
-                              ? "bg-blue-500"
-                              : message.from === "parent"
-                                ? "bg-green-500"
-                                : "bg-purple-500"
-                          }`}
-                        >
-                          {message.from === "student" ? "👨‍🎓" : message.from === "parent" ? "👨‍👩‍👧‍👦" : "👨‍🏫"}
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900">{message.senderName}</h4>
-                          <p className="text-sm text-gray-500 capitalize">{message.from}</p>
-                        </div>
-                        {message.unread && <span className="w-3 h-3 bg-blue-500 rounded-full"></span>}
-                      </div>
-                      <h5 className="font-medium text-gray-900 mb-1">{message.subject}</h5>
-                      <p className="text-gray-600 text-sm mb-2">{message.message}</p>
-                      <p className="text-xs text-gray-500">{message.timestamp}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="p-6 border-t border-gray-200">
-              <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-xl hover:bg-blue-700 transition-colors font-medium">
-                View All Messages
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900">Student Appointments</h3>
+                <p className="text-gray-600">Manage your counselling sessions</p>
+              </div>
+              <button
+                onClick={fetchAppointments}
+                className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors"
+              >
+                🔄 Refresh
               </button>
             </div>
+
+            {loadingAppointments ? (
+              <div className="flex justify-center items-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+              </div>
+            ) : appointments.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {appointments.map((appointment) => (
+                  <div
+                    key={appointment._id}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                  >
+                    {/* Student Header */}
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <span className="text-2xl">👨‍🎓</span>
+                          </div>
+                          <div>
+                            <h4 className="font-bold">{appointment.studentName}</h4>
+                            <p className="text-sm text-blue-100">{appointment.studentEmail}</p>
+                          </div>
+                        </div>
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusBadge(appointment.status)}`}
+                        >
+                          {appointment.status?.charAt(0).toUpperCase() + appointment.status?.slice(1)}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Appointment Details */}
+                    <div className="p-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <span className="text-blue-600">📅</span>
+                          <span className="text-gray-700">{formatDate(appointment.date)}</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-blue-600">🕐</span>
+                          <span className="text-gray-700">{appointment.time}</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-blue-600">{appointment.sessionType === "video" ? "🎥" : "📞"}</span>
+                          <span className="text-gray-700 capitalize">{appointment.sessionType} Call</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-green-600">💰</span>
+                          <span className="font-semibold text-green-700">₹{appointment.amount}</span>
+                        </div>
+                      </div>
+
+                      {appointment.message && (
+                        <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                          <p className="text-sm text-gray-500 mb-1">Student's Message:</p>
+                          <p className="text-sm text-gray-700">{appointment.message}</p>
+                        </div>
+                      )}
+
+                      {/* Payment Status */}
+                      <div className="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-green-600">✅</span>
+                          <span className="text-sm font-medium text-green-700">
+                            Payment: {appointment.paymentStatus === "paid" ? "Received" : appointment.paymentStatus}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Action Buttons */}
+                      {appointment.status === "confirmed" && (
+                        <div className="mt-4 grid grid-cols-2 gap-2">
+                          <button
+                            onClick={() => updateAppointmentStatus(appointment._id, "completed")}
+                            className="py-2 px-4 bg-green-100 text-green-700 rounded-lg text-sm font-medium hover:bg-green-200 transition-colors"
+                          >
+                            ✓ Complete
+                          </button>
+                          <button
+                            onClick={() => updateAppointmentStatus(appointment._id, "cancelled")}
+                            className="py-2 px-4 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200 transition-colors"
+                          >
+                            ✕ Cancel
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
+                <div className="text-5xl mb-4">📅</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">No Appointments Yet</h4>
+                <p className="text-gray-600">When students book sessions with you, they'll appear here.</p>
+              </div>
+            )}
           </div>
         )
+
+      case "messages":
+        return <MessagingTab messages={messages} navigate={navigate} />
 
       case "profile":
         return (
@@ -330,20 +503,6 @@ const CounsellorDashboard = ({ onLogout }) => {
                     ))}
                   </div>
                 </div>
-                <div className="bg-orange-50 p-6 rounded-xl border border-orange-100">
-                  <h4 className="font-bold text-orange-900 mb-3">Qualifications</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {userProfile.qualifications?.map((qual, index) => (
-                      <span key={index} className="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm">
-                        {qual}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                  <h4 className="font-bold text-gray-900 mb-3">Professional Bio</h4>
-                  <p className="text-sm text-gray-700">{userProfile.bio}</p>
-                </div>
               </div>
             ) : (
               <div className="text-center py-8">
@@ -374,7 +533,7 @@ const CounsellorDashboard = ({ onLogout }) => {
               <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">👨‍🏫</span>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">Counsellor Dashboard</h1>
+              <h1 className="text-2xl font-bold text-gray-900">CareerOS</h1>
             </div>
             <div className="flex items-center space-x-4">
               <button
@@ -405,29 +564,21 @@ const CounsellorDashboard = ({ onLogout }) => {
         </div>
       </header>
 
-      {/* Profile Completion Status */}
+      {/* Profile Status Banner */}
       {profileCompleted ? (
         <div className="bg-green-50 border-l-4 border-green-400 p-4 mx-4 mt-4 rounded-r-lg">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <span className="text-green-400 text-xl">✅</span>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm text-green-700 font-medium">
-                Profile completed! You're ready to help students achieve their career goals.
-              </p>
-            </div>
+            <span className="text-green-400 text-xl">✅</span>
+            <p className="ml-3 text-sm text-green-700 font-medium">Profile completed! You're ready to help students.</p>
           </div>
         </div>
       ) : (
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mx-4 mt-4 rounded-r-lg">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <span className="text-yellow-400 text-xl">⚠️</span>
-            </div>
+            <span className="text-yellow-400 text-xl">⚠️</span>
             <div className="ml-3">
               <p className="text-sm text-yellow-700 font-medium">
-                Complete your profile to start accepting student consultations and unlock all features.
+                Complete your profile to start accepting consultations.
               </p>
               <button
                 onClick={() => setShowProfilePopup(true)}
@@ -440,12 +591,17 @@ const CounsellorDashboard = ({ onLogout }) => {
         </div>
       )}
 
-      {/* Navigation Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div className="border-b border-gray-200">
           <nav className="-mb-px flex space-x-8">
             {[
               { id: "overview", name: "Overview", icon: "📊" },
+              {
+                id: "appointments",
+                name: "Appointments",
+                icon: "📅",
+                badge: appointments.filter((a) => a.status === "confirmed").length,
+              },
               { id: "messages", name: "Messages", icon: "💬", badge: unreadCount },
               { id: "profile", name: "Profile", icon: "👤" },
             ].map((tab) => (
@@ -472,7 +628,7 @@ const CounsellorDashboard = ({ onLogout }) => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">{renderTabContent()}</main>
 
-      {/* Profile Completion Popup */}
+      {/* Profile Popup */}
       {showProfilePopup && (
         <CounsellorProfilePopup
           user={user}

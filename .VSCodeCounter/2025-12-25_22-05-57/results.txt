@@ -1,0 +1,200 @@
+Date : 2025-12-25 22:05:57
+Directory : /Users/shikharsingh/Desktop/careercounselling copy
+Total : 134 files,  26479 codes, 3842 comments, 2164 blanks, all 32485 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          7 |     11,815 |          0 |          7 |     11,822 |
+| JavaScript JSX |         75 |     11,695 |      3,391 |      1,583 |     16,669 |
+| JavaScript     |         42 |      2,685 |        450 |        536 |      3,671 |
+| PostCSS        |          4 |        246 |          1 |         28 |        275 |
+| Dotenv         |          2 |         16 |          0 |          3 |         19 |
+| HTML           |          1 |         13 |          0 |          1 |         14 |
+| Markdown       |          1 |          7 |          0 |          6 |         13 |
+| XML            |          2 |          2 |          0 |          0 |          2 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                             | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                |        134 |     26,479 |      3,842 |      2,164 |     32,485 |
+| client                                                                                                           |         99 |     20,123 |      3,511 |      1,724 |     25,358 |
+| client (Files)                                                                                                   |         10 |      7,084 |          2 |         18 |      7,104 |
+| client/public                                                                                                    |          1 |          1 |          0 |          0 |          1 |
+| client/scripts                                                                                                   |          1 |         12 |          1 |          1 |         14 |
+| client/src                                                                                                       |         87 |     13,026 |      3,508 |      1,705 |     18,239 |
+| client/src (Files)                                                                                               |          4 |        156 |          0 |         22 |        178 |
+| client/src/assets                                                                                                |          1 |          1 |          0 |          0 |          1 |
+| client/src/components                                                                                            |         38 |      4,316 |        407 |        658 |      5,381 |
+| client/src/components (Files)                                                                                    |         16 |      1,334 |         40 |        158 |      1,532 |
+| client/src/components/assistant                                                                                  |          9 |      2,345 |        367 |        412 |      3,124 |
+| client/src/components/assistant (Files)                                                                          |          1 |         15 |          5 |          5 |         25 |
+| client/src/components/assistant/core                                                                             |          5 |      1,258 |        101 |        267 |      1,626 |
+| client/src/components/assistant/hooks                                                                            |          1 |        346 |         20 |         73 |        439 |
+| client/src/components/assistant/ui                                                                               |          2 |        726 |        241 |         67 |      1,034 |
+| client/src/components/ui                                                                                         |         13 |        637 |          0 |         88 |        725 |
+| client/src/context                                                                                               |          1 |         70 |          1 |         19 |         90 |
+| client/src/data                                                                                                  |          1 |        560 |          0 |          1 |        561 |
+| client/src/lib                                                                                                   |          2 |         77 |          8 |         21 |        106 |
+| client/src/pages                                                                                                 |         35 |      7,480 |      2,995 |        919 |     11,394 |
+| client/src/pages (Files)                                                                                         |         27 |      6,040 |      2,963 |        804 |      9,807 |
+| client/src/pages/resume                                                                                          |          8 |      1,440 |         32 |        115 |      1,587 |
+| client/src/services                                                                                              |          3 |        221 |         96 |         52 |        369 |
+| client/src/styles                                                                                                |          2 |        145 |          1 |         13 |        159 |
+| server                                                                                                           |         35 |      6,356 |        331 |        440 |      7,127 |
+| server (Files)                                                                                                   |          5 |      3,818 |         86 |         52 |      3,956 |
+| server/config                                                                                                    |          2 |         41 |          1 |          4 |         46 |
+| server/controllers                                                                                               |          1 |         41 |          0 |         11 |         52 |
+| server/data                                                                                                      |          1 |        560 |          0 |          1 |        561 |
+| server/lib                                                                                                       |          1 |         10 |          0 |          2 |         12 |
+| server/models                                                                                                    |          8 |        319 |         12 |         35 |        366 |
+| server/prompts                                                                                                   |          1 |         52 |          0 |          3 |         55 |
+| server/routes                                                                                                    |          9 |      1,169 |        143 |        245 |      1,557 |
+| server/services                                                                                                  |          2 |         87 |         15 |         13 |        115 |
+| server/socket                                                                                                    |          1 |         64 |          8 |         12 |         84 |
+| server/utils                                                                                                     |          4 |        195 |         66 |         62 |        323 |
++------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                         | language       | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/shikharsingh/Desktop/careercounselling copy/client/.env                                                   | Dotenv         |          6 |          0 |          1 |          7 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/README.md                                              | Markdown       |          7 |          0 |          6 |         13 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/eslint.config.js                                       | JavaScript     |         28 |          0 |          2 |         30 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/index.html                                             | HTML           |         13 |          0 |          1 |         14 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/package-lock.json                                      | JSON           |      6,944 |          0 |          1 |      6,945 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/package.json                                           | JSON           |         54 |          0 |          1 |         55 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/postcss.config.js                                      | JavaScript     |          5 |          0 |          2 |          7 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/postcss.config.js 18-05-46-290.js                      | JavaScript     |          6 |          0 |          1 |          7 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/public/vite.svg                                        | XML            |          1 |          0 |          0 |          1 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/scripts/annotate-ui-check.js                           | JavaScript     |         12 |          1 |          1 |         14 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/App.css                                            | PostCSS        |         37 |          0 |          6 |         43 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/App.jsx                                            | JavaScript JSX |         45 |          0 |          5 |         50 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/assets/react.svg                                   | XML            |          1 |          0 |          0 |          1 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/AptitudeSection.jsx                     | JavaScript JSX |         46 |          0 |          8 |         54 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/BarChart.jsx                            | JavaScript JSX |         43 |          0 |          7 |         50 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/CollegeCard.jsx                         | JavaScript JSX |        226 |         20 |         26 |        272 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/PersonalitySection.jsx                  | JavaScript JSX |         42 |          0 |          6 |         48 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ProgressBar.jsx                         | JavaScript JSX |         28 |          2 |          4 |         34 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/QuestionCard.jsx                        | JavaScript JSX |         55 |          0 |          6 |         61 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RIASECSection.jsx                       | JavaScript JSX |         43 |          0 |          7 |         50 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RadarChart.jsx                          | JavaScript JSX |         67 |          0 |         11 |         78 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RecommendationSkeleton.jsx              | JavaScript JSX |         37 |         11 |          8 |         56 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapFlow.jsx                         | JavaScript JSX |         54 |          0 |          6 |         60 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapForm.jsx                         | JavaScript JSX |        236 |          0 |         22 |        258 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/RoadmapNode.jsx                         | JavaScript JSX |        120 |          0 |         16 |        136 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/StepLayout.jsx                          | JavaScript JSX |         15 |          0 |          2 |         17 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/SubmitModal.jsx                         | JavaScript JSX |         29 |          0 |          3 |         32 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ValuesSection.jsx                       | JavaScript JSX |         42 |          0 |          6 |         48 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/action-executor.jsx      | JavaScript JSX |        294 |         31 |         95 |        420 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/command-registry.jsx     | JavaScript JSX |        166 |         19 |         29 |        214 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/element-finder.jsx       | JavaScript JSX |        216 |         19 |         42 |        277 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/intent-processor.jsx     | JavaScript JSX |        384 |         17 |         59 |        460 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/core/workflow-engine.jsx      | JavaScript JSX |        198 |         15 |         42 |        255 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/hooks/use-voice-assistant.jsx | JavaScript JSX |        346 |         20 |         73 |        439 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/index.jsx                     | JavaScript JSX |         15 |          5 |          5 |         25 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/ui/assistant-overlay.jsx      | JavaScript JSX |        445 |        241 |         46 |        732 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/assistant/ui/visual-indicator.jsx       | JavaScript JSX |        281 |          0 |         21 |        302 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/student-profile-modal.jsx               | JavaScript JSX |        251 |          7 |         20 |        278 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/alert.jsx                            | JavaScript JSX |         26 |          0 |          5 |         31 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/badge.jsx                            | JavaScript JSX |         35 |          0 |          6 |         41 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/button.jsx                           | JavaScript JSX |         50 |          0 |          6 |         56 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/card.jsx                             | JavaScript JSX |         92 |          0 |         10 |        102 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/checkbox.jsx                         | JavaScript JSX |         25 |          0 |          5 |         30 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/dialog.jsx                           | JavaScript JSX |        120 |          0 |         14 |        134 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/input.jsx                            | JavaScript JSX |         21 |          0 |          4 |         25 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/label.jsx                            | JavaScript JSX |         18 |          0 |          4 |         22 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/progress.jsx                         | JavaScript JSX |         23 |          0 |          5 |         28 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/select.jsx                           | JavaScript JSX |        132 |          0 |         14 |        146 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/switch.jsx                           | JavaScript JSX |         24 |          0 |          4 |         28 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/tabs.jsx                             | JavaScript JSX |         54 |          0 |          7 |         61 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/components/ui/textarea.jsx                         | JavaScript JSX |         17 |          0 |          4 |         21 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/context/SocketContext.jsx                          | JavaScript JSX |         70 |          1 |         19 |         90 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/data/psychometricQuestions.json                    | JSON           |        560 |          0 |          1 |        561 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/index.css                                          | PostCSS        |         64 |          0 |          9 |         73 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/lib/api.js                                         | JavaScript     |         74 |          7 |         20 |        101 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/lib/utils.js                                       | JavaScript     |          3 |          1 |          1 |          5 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/main.jsx                                           | JavaScript JSX |         10 |          0 |          2 |         12 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/AIOptimizationModal.jsx                      | JavaScript JSX |        200 |        240 |         44 |        484 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ARCampusVisualiser.jsx                       | JavaScript JSX |        215 |          7 |         18 |        240 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ARScene.jsx                                  | JavaScript JSX |         70 |          5 |          9 |         84 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/AvatarMenu.jsx                               | JavaScript JSX |        113 |          8 |         10 |        131 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/BookApointment.jsx                           | JavaScript JSX |        393 |        300 |         75 |        768 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CameraView.jsx                               | JavaScript JSX |        124 |          5 |         10 |        139 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CareerRecommendations.jsx                    | JavaScript JSX |        177 |          4 |         11 |        192 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CareerRoadmap.jsx                            | JavaScript JSX |        186 |          0 |         17 |        203 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ChatInterface.jsx                            | JavaScript JSX |        211 |        209 |         50 |        470 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CollegeMap.jsx                               | JavaScript JSX |         79 |          3 |         17 |         99 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ConsultCounsellor.jsx                        | JavaScript JSX |        278 |        281 |         67 |        626 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CounsellorDashboard.jsx                      | JavaScript JSX |        581 |        598 |         97 |      1,276 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/CounsellorProfilePopup.jsx                   | JavaScript JSX |        448 |          4 |         26 |        478 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ExploreColleges.jsx                          | JavaScript JSX |        279 |          5 |         23 |        307 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/Landing.jsx                                  | JavaScript JSX |        424 |        530 |         76 |      1,030 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/Layout.jsx                                   | JavaScript JSX |         20 |          0 |          3 |         23 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/LoadingSkeleton.jsx                          | JavaScript JSX |         29 |          0 |          2 |         31 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/MessageList.jsx                              | JavaScript JSX |        202 |        209 |         36 |        447 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/MessagingPage.jsx                            | JavaScript JSX |         92 |          0 |         10 |        102 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ModelLoader.jsx                              | JavaScript JSX |         31 |          2 |          5 |         38 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfileCompletionPopup.jsx                   | JavaScript JSX |        535 |          4 |         26 |        565 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfilePage.jsx                              | JavaScript JSX |        162 |          6 |         12 |        180 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ProfilePictureUpload.jsx                     | JavaScript JSX |        123 |          8 |         12 |        143 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/PsychometricReport.jsx                       | JavaScript JSX |        193 |          5 |         19 |        217 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/PsychometricTest.jsx                         | JavaScript JSX |        115 |          0 |         25 |        140 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/ResumeBuilder.jsx                            | JavaScript JSX |        259 |          7 |         14 |        280 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/StudentDashboard.jsx                         | JavaScript JSX |        501 |        523 |         90 |      1,114 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/CertificationsProjectForm.jsx         | JavaScript JSX |        244 |          2 |         19 |        265 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/EducationForm.jsx                     | JavaScript JSX |        164 |          0 |         12 |        176 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/ExportUtils.js                        | JavaScript     |        226 |         12 |         20 |        258 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/PersonalInfoForm.jsx                  | JavaScript JSX |         59 |          0 |          6 |         65 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/ResumePreview.jsx                     | JavaScript JSX |        290 |         14 |         18 |        322 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/SkillsForm.jsx                        | JavaScript JSX |        124 |          3 |         13 |        140 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/TemplateSelector.jsx                  | JavaScript JSX |        130 |          0 |         11 |        141 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/pages/resume/WorkExperienceForm.jsx                | JavaScript JSX |        203 |          1 |         16 |        220 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/services/collegeApi.js                             | JavaScript     |        100 |          2 |         11 |        113 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/services/geminiService.js                          | JavaScript     |         37 |          0 |         10 |         47 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/services/generateRoadmap.js                        | JavaScript     |         84 |         94 |         31 |        209 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/styles/globals.css                                 | PostCSS        |        120 |          1 |          6 |        127 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/src/styles/roadmap.css                                 | PostCSS        |         25 |          0 |          7 |         32 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/tailwind.config.js                                     | JavaScript     |         10 |          1 |          1 |         12 |
+| /Users/shikharsingh/Desktop/careercounselling copy/client/vite.config.js                                         | JavaScript     |         11 |          1 |          2 |         14 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/.env                                                   | Dotenv         |         10 |          0 |          2 |         12 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/config/domainOntology.js                               | JavaScript     |         32 |          1 |          3 |         36 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/config/mlWeights.json                                  | JSON           |          9 |          0 |          1 |         10 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/controllers/resume.controller.js                       | JavaScript     |         41 |          0 |         11 |         52 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/data/psychometricQuestions.json                        | JSON           |        560 |          0 |          1 |        561 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/generateCollegeEmbeddings.js                           | JavaScript     |         67 |          2 |         13 |         82 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/index.js                                               | JavaScript     |         53 |         84 |         35 |        172 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/lib/mongodb.js                                         | JavaScript     |         10 |          0 |          2 |         12 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/Appointment.js                                  | JavaScript     |         41 |          0 |          3 |         44 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/Message.js                                      | JavaScript     |         13 |          0 |          3 |         16 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/PsychometricTest.js                             | JavaScript     |         91 |          3 |          7 |        101 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/RecommendationEvent.js                          | JavaScript     |         33 |          8 |          5 |         46 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/StudentProfile.js                               | JavaScript     |         27 |          0 |          3 |         30 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/college.js                                      | JavaScript     |         75 |          1 |          6 |         82 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/counsellor-profile.js                           | JavaScript     |         28 |          0 |          3 |         31 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/models/user.js                                         | JavaScript     |         11 |          0 |          5 |         16 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/package-lock.json                                      | JSON           |      3,650 |          0 |          1 |      3,651 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/package.json                                           | JSON           |         38 |          0 |          1 |         39 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/prompts/resume.prompts.js                              | JavaScript     |         52 |          0 |          3 |         55 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/appointments.js                                 | JavaScript     |        121 |          5 |         18 |        144 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/assistant-intent-smart.js                       | JavaScript     |        164 |          5 |         20 |        189 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/generateRoadmap.js                              | JavaScript     |         28 |          2 |         11 |         41 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/messages.js                                     | JavaScript     |         56 |         15 |         12 |         83 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/payments.js                                     | JavaScript     |         63 |          3 |         11 |         77 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/psychometric.js                                 | JavaScript     |        355 |         45 |         81 |        481 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/recommendationRoutes.js                         | JavaScript     |        165 |         50 |         33 |        248 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/resume.routes.js                                | JavaScript     |         11 |          0 |          4 |         15 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/routes/users.js                                        | JavaScript     |        206 |         18 |         55 |        279 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/services/gemini.service.js                             | JavaScript     |         15 |          0 |          5 |         20 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/services/message.service.js                            | JavaScript     |         72 |         15 |          8 |         95 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/socket/socket.js                                       | JavaScript     |         64 |          8 |         12 |         84 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/utils/academicResolver.js                              | JavaScript     |          7 |          1 |          3 |         11 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/utils/domainResolver.js                                | JavaScript     |         21 |          0 |          7 |         28 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/utils/eligibilityGate.js                               | JavaScript     |         25 |          3 |          9 |         37 |
+| /Users/shikharsingh/Desktop/careercounselling copy/server/utils/recommendationHelpers.js                         | JavaScript     |        142 |         62 |         43 |        247 |
+| Total                                                                                                            |                |     26,479 |      3,842 |      2,164 |     32,485 |
++------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

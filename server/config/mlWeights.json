@@ -1,0 +1,9 @@
+{
+  "similarity": 0.48,
+  "interestOverlap": 0.22,
+  "budgetFit": 0.14,
+  "locationMatch": 0.06,
+  "placementScore": 0.05,
+  "scholarshipMatch": 0.03,
+  "studyModeMatch": 0.02
+}

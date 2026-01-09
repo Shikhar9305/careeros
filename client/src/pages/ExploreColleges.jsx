@@ -68,7 +68,7 @@ const ExploreColleges = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/student-dashboard")}
               className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
             >
               ← Back to Dashboard
