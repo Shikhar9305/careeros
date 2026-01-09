@@ -9,7 +9,7 @@ import CareerRoadmapPage from "./pages/CareerRoadmap";
 import RoadmapForm from "./components/RoadmapForm";
 import BookAppointment from "./pages/BookApointment";
 import ConsultCounsellor from "./pages/ConsultCounsellor";
-import ARCampusVisualizer from "./pages/ArCampusVisualiser";
+import ARCampusVisualizer from "./pages/ARCampusVisualiser";
 import ResumeBuilder from "./pages/ResumeBuilder";
 import PsychometricTest from "./pages/PsychometricTest"
 import PsychometricReport from "./pages/PsychometricReport"
