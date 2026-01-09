@@ -25,13 +25,20 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.CLIENT_URL
+  "https://careeros-ten.vercel.app",
+  "https://careeros-6epcb92rc-shikharsingh011111-gmailcoms-projects.vercel.app",
 ];
 
 /* -------------------- MIDDLEWARE -------------------- */
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "x-session-id"],

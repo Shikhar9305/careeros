@@ -20,14 +20,21 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (socketRef.current) return; // ✅ prevent re-creation
 
-    const socketInstance = io(
-      import.meta.env.VITE_SOCKET_URL || "http://localhost:5002",
-      {
-        transports: ["websocket", "polling"],
-        reconnection: true,
-        reconnectionAttempts: Infinity,
-      }
-    );
+    // const socketInstance = io(
+    //   import.meta.env.VITE_SOCKET_URL || "http://localhost:5002",
+    //   {
+    //     transports: ["websocket", "polling"],
+    //     reconnection: true,
+    //     reconnectionAttempts: Infinity,
+    //   }
+    // );
+    const socketInstance = io(import.meta.env.VITE_API_URL, {
+  withCredentials: true,
+  transports: ["websocket"],
+  reconnection: true,
+  reconnectionAttempts: Infinity,
+});
+
 
     socketRef.current = socketInstance;
 
