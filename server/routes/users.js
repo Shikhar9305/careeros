@@ -358,7 +358,7 @@ router.post("/signup", async (req, res) => {
     await newUser.save();
 
     await transporter.sendMail({
-      from: "careerOS<sshikhar442@gmail.com>",
+      from: '"CareerOS" <sshikhar442@gmail.com>',
       to: email,
       subject: "Your OTP Verification Code",
       html: `
@@ -375,7 +375,11 @@ router.post("/signup", async (req, res) => {
     });
   } catch (err) {
     console.error("SIGNUP ERROR:", err);
-    res.status(500).json({ error: "Signup failed" });
+    res.status(500).json({
+    error: err.message,
+    code: err.code,
+    response: err.response,
+  });
   }
 });
 
