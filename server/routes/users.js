@@ -280,34 +280,21 @@
 import express from "express";
 import mongoose from "mongoose";
 import User from "../models/user.js";
-import nodemailer from "nodemailer";
 import StudentProfile from "../models/StudentProfile.js";
 import CounsellorProfile from "../models/counsellor-profile.js";
 import dotenv from "dotenv";
 import fetch from "node-fetch";
+import SibApiV3Sdk from "sib-api-v3-sdk";
 
 dotenv.config();
 const router = express.Router();
 
-/* -------------------- BREVO SMTP MAILER -------------------- */
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.BREVO_SMTP_USER, // 9fb6d7001@smtp-brevo.com
-    pass: process.env.BREVO_SMTP_PASS, // SMTP key
-  },
-});
+/* -------------------- BREVO API SETUP (NO SMTP) -------------------- */
+const defaultClient = SibApiV3Sdk.ApiClient.instance;
+const apiKey = defaultClient.authentications["api-key"];
+apiKey.apiKey = process.env.BREVO_API_KEY;
 
-// Optional: verify SMTP on startup
-transporter.verify((err) => {
-  if (err) {
-    console.error("❌ Brevo SMTP error:", err);
-  } else {
-    console.log("✅ Brevo SMTP ready");
-  }
-});
+const transactionalEmailApi = new SibApiV3Sdk.TransactionalEmailsApi();
 
 /* ----------------- GEMINI SETUP ----------------- */
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
@@ -357,11 +344,15 @@ router.post("/signup", async (req, res) => {
 
     await newUser.save();
 
-    await transporter.sendMail({
-      from: '"CareerOS" <sshikhar442@gmail.com>',
-      to: email,
+    /* -------- SEND OTP VIA BREVO HTTP API (RENDER SAFE) -------- */
+    await transactionalEmailApi.sendTransacEmail({
+      sender: {
+        name: "CareerOS",
+        email: "sshikhar442@gmail.com", // VERIFIED SENDER IN BREVO
+      },
+      to: [{ email }],
       subject: "Your OTP Verification Code",
-      html: `
+      htmlContent: `
         <h2>Email Verification</h2>
         <p>Your OTP is:</p>
         <h1>${otp}</h1>
@@ -374,12 +365,10 @@ router.post("/signup", async (req, res) => {
       userId: newUser._id,
     });
   } catch (err) {
-    console.error("SIGNUP ERROR:", err);
+    console.error("SIGNUP ERROR FULL:", err);
     res.status(500).json({
-    error: err.message,
-    code: err.code,
-    response: err.response,
-  });
+      error: err.message,
+    });
   }
 });
 
@@ -475,25 +464,28 @@ router.post("/complete-profile", async (req, res) => {
   }
 });
 
-//Complete counsellor profile
-
+/* ---------- COMPLETE COUNSELLOR PROFILE ---------- */
 router.post("/complete-counsellor-profile", async (req, res) => {
   try {
     const { userId, ...profileData } = req.body;
     const newProfile = new CounsellorProfile({ userId, ...profileData });
     await newProfile.save();
-    res.status(201).json({ message: "Counsellor profile completed", profile: newProfile });
+    res
+      .status(201)
+      .json({ message: "Counsellor profile completed", profile: newProfile });
   } catch (error) {
     console.error("Counsellor profile completion error:", error);
     res.status(500).json({ error: "Failed to save counsellor profile" });
   }
 });
 
-// Get student profile
+/* ---------- GET STUDENT PROFILE ---------- */
 router.get("/profile/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    const profile = await StudentProfile.findOne({ userId: new mongoose.Types.ObjectId(userId) });
+    const profile = await StudentProfile.findOne({
+      userId: new mongoose.Types.ObjectId(userId),
+    });
     if (!profile) return res.status(404).json({ message: "Profile not found" });
     res.json(profile);
   } catch (error) {
@@ -502,12 +494,17 @@ router.get("/profile/:userId", async (req, res) => {
   }
 });
 
-// Get counsellor profile
+/* ---------- GET COUNSELLOR PROFILE ---------- */
 router.get("/counsellor-profile/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
-    const profile = await CounsellorProfile.findOne({ userId: new mongoose.Types.ObjectId(userId) });
-    if (!profile) return res.status(404).json({ message: "Counsellor profile not found" });
+    const profile = await CounsellorProfile.findOne({
+      userId: new mongoose.Types.ObjectId(userId),
+    });
+    if (!profile)
+      return res
+        .status(404)
+        .json({ message: "Counsellor profile not found" });
     res.json(profile);
   } catch (error) {
     console.error("Error fetching counsellor profile:", error);
@@ -515,7 +512,7 @@ router.get("/counsellor-profile/:userId", async (req, res) => {
   }
 });
 
-// GET all counsellors
+/* ---------- GET ALL COUNSELLORS ---------- */
 router.get("/counsellors/all", async (req, res) => {
   try {
     const counsellors = await CounsellorProfile.find({});
@@ -526,7 +523,4 @@ router.get("/counsellors/all", async (req, res) => {
   }
 });
 
-
 export default router;
-
-
